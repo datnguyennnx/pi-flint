@@ -1,0 +1,35 @@
+node_modules/
+dist/
+coverage/
+*.log
+.DS_Store
+
+# Build artifacts
+*.tsbuildinfo
+.esbuild/
+build/
+
+# Package manager
+.pnpm-store/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Caches
+.cache/
+.turbo/
+.eslintcache
+
+# Temp
+tmp/
+.tmp/
+*.tgz
+
+# IDE / editor / OS
+.idea/
+.vscode/
+*.swp
+*~
+Thumbs.db
