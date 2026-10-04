@@ -1,0 +1,16 @@
+{
+  "name": "@opencode-ai/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "// SHIM(pi-flint)": "Local stub replacing the reserved npm @opencode-ai/core placeholder (0.0.0-reserved.0). Satisfies the subpaths the vendored TUI imports; behavior is a safe default until the data lane rebinds it.",
+  "exports": {
+    "./installation/version": "./installation/version.ts",
+    "./flag/flag": "./flag/flag.ts",
+    "./open": "./open.ts",
+    "./global": "./global.ts",
+    "./util/glob": "./util/glob.ts",
+    "./util/flock": "./util/flock.ts",
+    "./util/which": "./util/which.ts"
+  }
+}

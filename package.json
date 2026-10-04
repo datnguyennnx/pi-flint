@@ -3,42 +3,66 @@
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "pi-flint": "./dist/cli.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint:knip": "knip",
-    "build": "node esbuild.config.mjs",
-    "build:watch": "node esbuild.config.mjs --watch",
+    "dev": "bun run src/cli/index.ts",
+    "build": "bun build src/cli/index.ts --outfile dist/cli.js --target bun --packages external",
+    "build:watch": "bun build src/cli/index.ts --outfile dist/cli.js --target bun --packages external --watch",
+    "start": "bun dist/cli.js",
     "typecheck": "tsc --noEmit"
   },
   "author": "datnguyennnx",
   "license": "ISC",
   "devEngines": {
     "packageManager": {
-      "name": "pnpm",
-      "version": "12.8.1",
+      "name": "bun",
+      "version": "1.4.0",
       "onFail": "download"
     }
   },
-  "packageManager": "pnpm@12.8.1",
+  "packageManager": "bun@1.4.0",
   "engines": {
     "node": ">=22.19.0"
   },
   "type": "module",
+  "trustedDependencies": ["@opentui/core"],
   "dependencies": {
     "@earendil-works/pi-agent-core": "^1.0.0",
     "@earendil-works/pi-ai": "^1.0.0",
     "@earendil-works/pi-coding-agent": "^1.0.0",
     "@earendil-works/pi-tui": "^1.0.0",
-    "chalk": "^6.0.1"
+    "@opencode-ai/core": "file:./src/shims/opencode-core",
+    "@opencode-ai/plugin": "^1.18.34",
+    "@opencode-ai/sdk": "^1.18.34",
+    "@opencode-ai/ui": "file:./src/shims/opencode-ui",
+    "@opentui/core": "^0.5.14",
+    "@opentui/keymap": "^0.5.14",
+    "@opentui/solid": "^0.5.14",
+    "chalk": "^6.0.1",
+    "clipboardy": "^5.3.2",
+    "diff": "^9.0.0",
+    "effect": "^4.0.0-rc.118",
+    "fuzzysort": "^4.0.2",
+    "opentui-spinner": "^0.0.7",
+    "remeda": "^2.51.0",
+    "solid-js": "^1.9.15",
+    "strip-ansi": "^7.2.0"
   },
   "devDependencies": {
+    "@types/bun": "^1.4.2",
     "@types/node": "^26.6.4",
     "esbuild": "^0.28.2",
     "knip": "^6.39.0",
     "prettier": "^3.9.9",
+    "tsdown": "^0.23.0",
     "tsx": "^4.23.15",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
   }
 }

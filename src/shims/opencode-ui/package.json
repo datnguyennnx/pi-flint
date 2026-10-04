@@ -1,0 +1,10 @@
+{
+  "name": "@opencode-ai/ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "// SHIM(pi-flint)": "Local stub for the @opencode-ai/ui audio assets imported by the vendored TUI. Files are copied verbatim from anomalyco/opencode packages/ui/src/assets/audio (MIT).",
+  "exports": {
+    "./audio/*": "./audio/*"
+  }
+}
